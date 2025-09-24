@@ -1,0 +1,67 @@
+// File: /app/risk/asset-register/view/types/index.ts
+export interface Asset {
+    // Basic Information
+    assetId: string;
+    name: string;
+    assetType: string;
+    description: string;
+    
+    // Ownership & Responsibility
+    owner: string;
+    custodian: string;
+    department: string;
+    stakeholders: string[];
+    
+    // Classification & Security
+    classification: string;
+    confidentiality: number;
+    integrity: number;
+    availability: number;
+    
+    // Location & Technical
+    physicalLocation: string;
+    hostingType: string;
+    vendor: string;
+    technicalReference: string;
+    
+    // Lifecycle
+    acquisitionDate: string;
+    expectedLifetime: string;
+    status: string;
+    decommissioningPlan: string;
+    
+    // Dependencies & Relationships
+    linkedProcesses: string;
+    linkedSystems: string;
+    thirdPartyDependencies: string;
+    regulatoryRelevance: string[];
+    
+    // Risk & Security
+    knownVulnerabilities: string[];
+    riskNotes: string;
+    associatedRisks?: Array<{
+        riskId: string;
+        title: string;
+        status: string;
+    }>;
+    
+    // Compliance
+    complianceItems: Array<{
+        id: string;
+        label: string;
+        checked: boolean;
+    }>;
+    auditReference: string;
+    
+    // Optional Fields
+    approvalStatus: string;
+    tags: string[];
+    notes: string;
+    
+    // History
+    history?: Array<{
+        date: string;
+        user: string;
+        action: string;
+    }>;
+}
